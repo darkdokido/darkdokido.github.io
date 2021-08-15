@@ -4,13 +4,21 @@
   
     
     <entry>
-      <title></title>
-      <link href="/2021/08141.html"/>
-      <url>/2021/08141.html</url>
+      <title>如何使用md来撰写文章？</title>
+      <link href="/2021/0816md_use.html"/>
+      <url>/2021/0816md_use.html</url>
       
-        <content type="html"><![CDATA[<p>我的第一个博客，还在建。</p>]]></content>
+        <content type="html"><![CDATA[<p>-<br>一、标题写法：-<br>第一种方法：<br>1、在文本下面加上 等于号 = ，那么上方的文本就变成了大标题。等于号的个数无限制，但一定要大于0个哦。。<br>2、在文本下面加上 下划线 - ，那么上方的文本就变成了中标题，同样的 下划线个数无限制。<br>3、要想输入=号，上面有文本而不让其转化为大标题，则需要在两者之间加一个空行。<br>另一种方法：（推荐这种方法；注意⚠️中间需要有一个空格）<br>关于标题还有等级表示法，分为六个等级，显示的文本大小依次减小。不同等级之间是以井号  #  的个数来标识的。一级标题有一个 #，二级标题有两个# ，以此类推。<br>例如：</p><h1 id="一级标题"><a href="#一级标题" class="headerlink" title="一级标题"></a>一级标题</h1><h2 id="二级标题"><a href="#二级标题" class="headerlink" title="二级标题"></a>二级标题</h2><h3 id="三级标题"><a href="#三级标题" class="headerlink" title="三级标题"></a>三级标题</h3><h4 id="四级标题"><a href="#四级标题" class="headerlink" title="四级标题"></a>四级标题</h4><h5 id="五级标题"><a href="#五级标题" class="headerlink" title="五级标题"></a>五级标题</h5><h6 id="六级标题"><a href="#六级标题" class="headerlink" title="六级标题"></a>六级标题</h6><p>二、编辑基本语法<br>1、字体格式强调<br> 我们可以使用下面的方式给我们的文本添加强调的效果<br><em>强调</em>  (示例：斜体)<br> <em>强调</em>  (示例：斜体)<br><strong>加重强调</strong>  (示例：粗体)<br> <strong>加重强调</strong> (示例：粗体)<br><em><strong>特别强调</strong></em> (示例：粗斜体)<br><em><strong>特别强调</strong></em>  (示例：粗斜体)<br>2、代码<br><code>&lt;hello world&gt;</code><br>3、代码块高亮<br>#<code> @Override protected void onDestroy() &#123;     EventBus.getDefault().unregister(this);     super.onDestroy(); &#125; #</code><br>4、表格 （建议在表格前空一行，否则可能影响表格无法显示）</p><table><thead><tr><th>表头</th><th>表头</th><th>表头</th></tr></thead><tbody><tr><td>单元格内容</td><td>单元格内容</td><td>单元格内容</td></tr><tr><td>单元格内容</td><td>单元格内容</td><td>单元格内容</td></tr><tr><td></td><td></td><td></td></tr><tr><td>5、其他引用</td><td></td><td></td></tr><tr><td>图片</td><td></td><td></td></tr><tr><td><img src="https://www.baidu.com/img/bd_logo1.png" alt="图片名称"></td><td></td><td></td></tr><tr><td>链接</td><td></td><td></td></tr><tr><td><a href="https://www.baidu.com/">链接名称</a></td><td></td><td></td></tr><tr><td>6、列表</td><td></td><td></td></tr></tbody></table><ol><li>项目1  </li><li>项目2  </li><li>项目3  <ul><li>项目1 （一个<em>号会显示为一个黑点，注意⚠️有空格，否则直接显示为</em>项目1） </li><li>项目2   </li></ul></li></ol><p>7、换行（建议直接在前一行后面补两个空格）<br>直接回车不能换行，<br>可以在上一行文本后面补两个空格，<br>这样下一行的文本就换行了。<br>或者就是在两行文本直接加一个空行。<br>也能实现换行效果，不过这个行间距有点大。  </p><p>8、引用</p><blockquote><p>第一行引用文字<br>第二行引用文字   </p></blockquote>]]></content>
       
       
+      
+        <tags>
+            
+            <tag> markdown </tag>
+            
+            <tag> etc </tag>
+            
+        </tags>
       
     </entry>
     
