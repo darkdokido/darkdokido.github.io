@@ -4,12 +4,22 @@
     .container {
         width: 95%;
     }
+    .top-scroll .btn-floating {
+        background: linear-gradient(to bottom right, #FF5E3A 0%, #FF2A68 100%);
+        width: 48px;
+        height: 48px;
+    }
 }
 
 /*中等屏幕下(平板类)的样式*/
 @media only screen and (min-width: 600px) and (max-width: 992px) {
     .container {
         width: 90%;
+    }
+    .top-scroll .btn-floating {
+        background: linear-gradient(to bottom right, #FF5E3A 0%, #FF2A68 100%);
+        width: 48px;
+        height: 48px;
     }
 }
 
