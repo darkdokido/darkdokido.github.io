@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>关于linux的一些小知识</title>
+      <link href="/2021/081711.html"/>
+      <url>/2021/081711.html</url>
+      
+        <content type="html"><![CDATA[<p>-</p><h1 id="linx的一些基础小知识-gt-lt"><a href="#linx的一些基础小知识-gt-lt" class="headerlink" title="linx的一些基础小知识&gt;_&lt; #"></a><font color="rgb(25,211,132)">linx的一些基础小知识&gt;_&lt; </font>#</h1><h3 id="linux上磁盘连接的方式与装置文件名的关系"><a href="#linux上磁盘连接的方式与装置文件名的关系" class="headerlink" title="linux上磁盘连接的方式与装置文件名的关系 ###"></a><font color="red">linux上磁盘连接的方式与装置文件名的关系 </font>###</h3><p>个人计算机常见的磁盘接口有两种，分别是 SATA与 SAS 接口，<br>目前的主流是 SATA 接口如果你PC上面有两个 SATA 磁盘以及一个 USB 磁盘，而主板上面有六个 SATA 的插槽。这两个 SATA 磁盘分别安插在主板上的 SATA1, SATA5 插槽上。由于是使用侦测到的顺序来决定装置文件名，并非与实际插槽代号有关，因此装置的文件名如下:<br></p><ol><li>SATA1 插槽上的檔名：/dev/sda <br></li><li>SATA5 插槽上的檔名：/dev/sdb <br></li><li>USB 磁盘(开机完成后才被系统捉到)：/dev/sdc<br><br></li></ol><h3 id="linux的目录树结构"><a href="#linux的目录树结构" class="headerlink" title=" linux的目录树结构 "></a><font color="red"> linux的目录树结构 </font></h3><p>linux上的根目录用一根【/】来表示， 所有的文件都与目录树有关。目录树的呈现方式如下图所示：<br></p><p><img src="https://i.ibb.co/dcr8jw8/1-1.png" alt="目录树"><br><br><br>如上图所示，所有的文件都是由根目录(/)衍生来的，而次目录之下还能够有其他的数据存在。上图中<br>长方形为目录，波浪形则为文件。那当我们想要取得 mydata 那个文件时，系统就得由根目录开始找，<br>然后找到 home 接下来找到 dmtsai， 最终的档名为：/home/dmtsai/mydata 的意思。<br></p><h3 id="中文输入法与设定"><a href="#中文输入法与设定" class="headerlink" title=" 中文输入法与设定 "></a><font color="red"> 中文输入法与设定 </font></h3><p>如果你的linux安装的时非中文语言，要使用中文输入法,在桌面左上角选择<strong>账户</strong>，再选择<strong>设定值</strong>，之后选择<strong>地区和语言</strong>项目，将中文选上即可。</p><h3 id="关于登入的用户与其所管理的文件范围"><a href="#关于登入的用户与其所管理的文件范围" class="headerlink" title=" 关于登入的用户与其所管理的文件范围 "></a><font color="red"> 关于登入的用户与其所管理的文件范围 </font></h3><p>举例来说，root 的家目录在/root， 所以 ~ 就代表/root 的意思。而 dmtsai 的家目录在<br>/home/dmtsai， 所以如果你以 dmtsai 登入时，他看到的 ~ 就会等于/home/dmtsai，其管理的范围就只有dmtsai下的所有文件。<br>如果要切换到root，则使用指令<br></p><blockquote><p>sudo -i <br></p></blockquote><p>即可。</p><h3 id="基础的linux指令格式-amp-常见的一些linux指令"><a href="#基础的linux指令格式-amp-常见的一些linux指令" class="headerlink" title=" 基础的linux指令格式&amp;常见的一些linux指令 "></a><font color="red"> 基础的linux指令格式&amp;常见的一些linux指令 </font></h3><p>下达指令的基本格式可以理解为：<br></p><blockquote><p>[dmtsai@study ~]$ command [-options] parameter1 parameter2 …<br><br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;指令 &emsp;&emsp;&emsp;&emsp;选项 &emsp;&emsp;参数(1) &emsp;&nbsp;参数(2)</p></blockquote><p>基础的一些指令为：<br></p><blockquote><ol><li>显示日期的指令： date <br></li><li>显示日历的指令： cal / <br>cal [month] [year]  / <br>cal 10 2015(显示2015年10月的日历) <br></li><li>简单好用的计算器： bc <br></li><li>显示当前文件夹下所有目录：ls <br> 在权限切换为root后，可以通过 ls -al 来查看当前所在文件夹下所有文件的权限</li><li>打开文件夹：cd 【文件夹名】 <br></li><li>回到上一目录: ../ <br></li><li>查看网络的联机状态: netstat -a <br></li></ol></blockquote><h3 id="关于文件权限"><a href="#关于文件权限" class="headerlink" title=" 关于文件权限 "></a><font color="red"> 关于文件权限 </font></h3><p>-rw-r–r– 分别对于 owner group other 的权限 为可读可写，只可读，只可写。<br>改变其文件权限的指令：<br> chgrp ：改变文件所属群组<br> chown ：改变文件拥有者<br> chmod ：改变文件的权限, SUID, SGID, SBIT 等等的特性<br>权限所对应的分数表：<br><br>r:4<br><br>w:2<br><br>x:1<br><br>使用示例：<br>owner = rwx = 4+2+1 = 7<br>group = rwx = 4+2+1 = 7<br>others= — = 0+0+0 = 0</p><blockquote><p>chmod 770 .bashrc (将.bashrc文件权限改成 -rwx-rwx—)</p></blockquote>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> linux </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>如何使用md来撰写文章？</title>
       <link href="/2021/0816md_use.html"/>
       <url>/2021/0816md_use.html</url>
