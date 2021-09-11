@@ -9,6 +9,13 @@
   </url>
   
   <url>
+    <loc>https://darkdokido.github.io/2021/091241037.html</loc>
+    
+    <lastmod>2021-09-11</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://darkdokido.github.io/2021/081832219.html</loc>
     
     <lastmod>2021-08-18</lastmod>
@@ -74,13 +81,6 @@
 
   
   <url>
-    <loc>https://darkdokido.github.io/tags/linux/</loc>
-    <lastmod>2021-09-11</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://darkdokido.github.io/tags/web/</loc>
     <lastmod>2021-09-11</lastmod>
     <changefreq>daily</changefreq>
@@ -89,6 +89,20 @@
   
   <url>
     <loc>https://darkdokido.github.io/tags/etc/</loc>
+    <lastmod>2021-09-11</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://darkdokido.github.io/tags/%E9%80%86%E5%90%91/</loc>
+    <lastmod>2021-09-11</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://darkdokido.github.io/tags/linux/</loc>
     <lastmod>2021-09-11</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>

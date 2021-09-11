@@ -4,7 +4,26 @@
   
     
     <entry>
-      <title>（转载）提问的艺术</title>
+      <title>汇编jcc指令表（转载）</title>
+      <link href="/2021/091241037.html"/>
+      <url>/2021/091241037.html</url>
+      
+        <content type="html"><![CDATA[<div><table border="0" align="center"><tbody><tr><td>JCC指令</td><td>中文含义</td><td>英文原意</td><td>检查符号位</td><td>典型c应用</td></tr><tr><td>JZ/JE</td><td>若为0则跳转；若相等则跳转</td><td>jump if zero;jump if equal</td><td>ZF=1</td><td>if (i == j);if (i == 0);</td></tr><tr><td>JNZ/JNE</td><td>若不为0则跳转；若不相等则跳转</td><td>jump if not zero;jump if not equal</td><td>ZF=0</td><td>if (i != j);if (i != 0);</td></tr><tr><td>JS</td><td>若为负则跳转</td><td>jump if sign</td><td>SF=1</td><td>if (i &lt; 0);</td></tr><tr><td>JNS</td><td>若为正则跳转</td><td>jump if not sign</td><td>SF=0</td><td>if (i &gt; 0);</td></tr><tr><td>JP/JPE</td><td>若1出现次数为偶数则跳转</td><td>jump if Parity (Even)</td><td>PF=1</td><td>(null)</td></tr><tr><td>JNP/JPO</td><td>若1出现次数为奇数则跳转</td><td>jump if not parity (odd)</td><td>PF=0</td><td>(null)</td></tr><tr><td>JO</td><td>若溢出则跳转</td><td>jump if overflow</td><td>OF=1</td><td>(null)</td></tr><tr><td>JNO</td><td>若无溢出则跳转</td><td>jump if not overflow</td><td>OF=0</td><td>(null)</td></tr><tr><td>JC/JB/JNAE</td><td>若进位则跳转；若低于则跳转；若不高于等于则跳转</td><td>jump if carry;jump if below;jump if not above equal</td><td>CF=1</td><td>if (i &lt; j);</td></tr><tr><td>JNC/JNB/JAE</td><td>若无进位则跳转；若不低于则跳转；若高于等于则跳转</td><td>jump if not carry;jump if not below;jump if above equal</td><td>CF=0</td><td>if (i &gt;= j);</td></tr><tr><td>JBE/JNA</td><td>若低于等于则跳转；若不高于则跳转</td><td>jump if below equal;jump if not above</td><td>ZF=1或CF=1</td><td>if (i &lt;= j);</td></tr><tr><td>JNBE/JA</td><td>若不低于等于则跳转；若高于则跳转</td><td>jump if not below equal;jump if above</td><td>ZF=0或CF=0</td><td>if (i &gt; j);</td></tr><tr><td>JL/JNGE</td><td>若小于则跳转；若不大于等于则跳转</td><td>jump if less;jump if not greater equal</td><td>SF != OF</td><td>if (si &lt; sj);</td></tr><tr><td>JNL/JGE</td><td>若不小于则跳转；若大于等于则跳转</td><td>jump if not less;jump if greater equal</td><td>SF=OF</td><td>if (si &gt;= sj);</td></tr><tr><td>JLE/JNG</td><td>若小于等于则跳转；若不大于则跳转</td><td>jump if less equal;jump if not greater</td><td>ZF != OF 或 ZF=1</td><td>if (si &lt;= sj);</td></tr><tr><td>JNLE/JG</td><td>若不小于等于则跳转；若大于则跳转</td><td>jump if not less equal;jump if greater</td><td>SF=OF 且 ZF=0</td><td>if(si&gt;sj)</td></tr></tbody></table></div><p>转自<a href="https://www.cnblogs.com/Drunkmars/p/14533653.html">Drunkmars,点击前往</a></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 逆向 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>提问的艺术（转载）</title>
       <link href="/2021/08201.html"/>
       <url>/2021/08201.html</url>
       
