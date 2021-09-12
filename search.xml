@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>c语言helloworld程序逆向时画的部分堆栈图（练习）</title>
+      <link href="/2021/091325828.html"/>
+      <url>/2021/091325828.html</url>
+      
+        <content type="html"><![CDATA[<p>堆栈图听着并不是很难，但实际画出来的感受便是很麻烦<br></p><p>以我现在的水平，还并不知道是不是堆栈图以后也要经常画，也挺困扰的。。</p><p><img src="./081832219/9.png" alt="很浅显，个人练习QAQ"></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 逆向 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>汇编jcc指令表（转载）</title>
       <link href="/2021/091241037.html"/>
       <url>/2021/091241037.html</url>
@@ -90,9 +109,9 @@
       
         <tags>
             
-            <tag> markdown </tag>
-            
             <tag> etc </tag>
+            
+            <tag> markdown </tag>
             
         </tags>
       
