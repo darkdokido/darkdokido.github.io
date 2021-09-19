@@ -4,6 +4,27 @@
   
     
     <entry>
+      <title>汇编代码实现一个参数和局部变量相加的函数</title>
+      <link href="/2021/092027713.html"/>
+      <url>/2021/092027713.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="1-源码"><a href="#1-源码" class="headerlink" title="1.源码"></a>1.源码</h2><p>以下是源码，参数定义为三个整型，然后，局部变量三个分别为2，3，4，作用为计算六个数字的和。c语言肯定很好写，汇编就要考虑更多的栈的问题了。</p><pre><code>    int __declspec(naked) addwith(int x, int y, int z)&#123;    __asm     &#123;        push ebp //保存原栈底        mov ebp,esp        sub esp, 0x40  //提升堆栈        push ebx        push esi        push edi  //保存原始寄存器的值        mov eax, 0xcccccccc        mov ecx, 0x10          lea edi, dword ptr ss : [ebp - 0x40]        rep stosd   //装填缓存区        mov dword ptr ss : [ebp - 0x4] , 2        mov dword ptr ss : [ebp - 0x8] , 3        mov dword ptr ss : [ebp - 0xc] , 4  //写入局部变量        mov eax, dword ptr ss : [ebp - 0x4]        add eax, dword ptr ss : [ebp - 0x8]        add eax, dword ptr ss : [ebp - 0xc]        add eax, dword ptr ss : [ebp + 0x8]        add eax, dword ptr ss : [ebp + 0xc]         add eax, dword ptr ss : [ebp + 0x10] //函数计算        pop edi        pop esi        pop ebx //还原寄存器        mov esp, ebp        pop ebp //还原堆栈        ret    &#125;&#125;</code></pre><h2 id="2-注意的点"><a href="#2-注意的点" class="headerlink" title="2.注意的点"></a>2.注意的点</h2><ul><li>__declspec(naked)表示告诉编译器不需要添加其它的汇编代码，所以，如果你在这个函数中什么都不写，编译器甚至不会为你生成ret返回指令</li><li>时刻注意16进制前要加0x，否则很可能在填充缓冲区时造成错误覆盖返回地址</li><li>参数在调用函数前就已经被压入栈中了，所以在写函数的时候不要再push参数<h2 id="最后，中秋要到了"><a href="#最后，中秋要到了" class="headerlink" title="最后，中秋要到了=.="></a><font color="#66ccff">最后，中秋要到了=.=</font></h2><img src="./081832219/10.png" alt="大家中秋节快乐嘤嘤嘤"></li></ul>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 逆向 </tag>
+            
+            <tag> 汇编 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>c语言helloworld程序逆向时画的部分堆栈图（练习）</title>
       <link href="/2021/091325828.html"/>
       <url>/2021/091325828.html</url>
@@ -61,7 +82,7 @@
     
     
     <entry>
-      <title>关于《网络是怎样连接的一些笔记》（暂且是1吧）</title>
+      <title>关于《网络是怎样连接的》一点笔记</title>
       <link href="/2021/081832219.html"/>
       <url>/2021/081832219.html</url>
       
