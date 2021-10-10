@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>sql基本语句</title>
+      <link href="/2021/101040039.html"/>
+      <url>/2021/101040039.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="基本查询语句"><a href="#基本查询语句" class="headerlink" title="基本查询语句"></a>基本查询语句</h2><p><strong>SELECT基本语句格式</strong>是：<br>SELECT{（字段列表）} FROM&lt;表1&gt;&lt;表2&gt;… WHERE &lt;表达式&gt;<br><br><br>查询到的结果结构如下图所示（*代表所有字段）：<br><br><a href="1"></a><br><br></p><p><strong>建表</strong>(案例)：<br>CREAT TABLE fruits<br><br>(<br><br>columns 数据类型  约束（not null 不接受null值）<br><br>f_id   char(10)  NOT NULL,<br><br>s_id   INT       NOT NULL,<br><br>f_name char(255) NOT NULL,<br><br>PRIMARY KEY(f_id)<br><br>)<br></p><br><p><strong>向表中插入数据</strong>：<br><br>INSERT INTO &lt;tableName&gt; (列1，列2，列3)<br><br>-&gt; VALUES( , , ),<br><br>( , , ),<br><br>…….<br><br>( , , );(括号内的数据类型要相符合)<br></p><p><strong>WHERE约束条件的使用</strong><br><br>案例1（<strong>IN</strong>）：<br><br>SELECT f_name,f_price FROM fruits WHERE f_price = 10.2<br><br>查询水果单价为10.2的name列和price列<br></p><p>案例2(<strong>NOT IN</strong>)：<br></p><p>SELECT f_name,f_price FROM fruits WHERE f_price IN （114，514）<br><br>查询臭水果单价再114到514之间的name列和price列,当然，如果是NOT IN,自然就是指单价不在这里面的了<br></p><p>案例3(<strong>BETWEEN AND</strong>)：<br><br>SELECT f_name,f_price FROM fruits WHERE f_price  BETWEEN 114 AND 514;<br><br>查找价格再在114到514之间的水果，包括价格为114与514的水果<br></p><p>案例4(<strong>LIKE</strong>)：<br><br>SELECT f_name,f_price FROM fruits WHERE f_name LIKE ‘b%’;<br><br>**通配符%**，这里是查找所有以’b’字符开头的水果名字，并匹配任意长度的字符，甚至包括\0字符<br><br>下面是查找以’b’开头，以’y’结尾的水果名字：<br>SELECT f_name,f_price FROM fruits WHERE f_name LIKE ‘b%y’;<br><br>包括g的名字：LIKE %g%<br><br>**通配符_**，匹配任意字符，并且一次只匹配一个<br><br>例如’_ _ _ _y’(这里特意间隔了方便看清) 匹配 ‘berry’<br></p><p>案例5(<strong>IS NULL</strong>)<br><br>当你希望某一列为空值时：SELECT f_name，f_price FROM fruits WHERE f_id IS NULL;<br></p><p>案例6(<strong>AND</strong>)<br><br>通过AND连接两个表达式，和c语言的&amp;和python的and差不多<BR><br>WHERE f_price = 114 AND f_id = ‘8848’</p><p>绑域名去了暂时先写到这里</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 数据库 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>sql2——payload(校园练习平台)</title>
       <link href="/2021/101045445.html"/>
       <url>/2021/101045445.html</url>
