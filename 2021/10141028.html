@@ -430,9 +430,13 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/ctf/">
+                                <span class="chip bg-color">ctf</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
@@ -496,18 +500,18 @@
 <ol>
 <li>爆库名 select1,2,group_concat(schema_name) from<br> information_schema.schemata–+</li>
 </ol>
-<p><img src="media/2176627e47cf156d839c94790d92e750.png"></p>
+<p><img src="10141028/1.png"></p>
 <p>3.查找note库中有哪些表：select 1,2,group_concat(table_name) from<br>information_schema.tables where table_schema=’note’ –+</p>
-<p><img src="media/426304fde32bf105a1d7ded33efe9c65.png"></p>
+<p><img src="10141028/2.png"></p>
 <p>4.同样，段名： select concat(column_name) from information_schema.columns where<br>table_name=’fl4g’–+</p>
 <p>5.然后 union select fllllag from fl4g–+</p>
 <p><strong>babysql</strong></p>
 <p>进入环境，先登录，访问login.php。</p>
 <p>进入burpsuite抓包</p>
-<p>发现有布尔注入漏洞，如下图，可通过and语句和回显判断语句是否为真，所以想到使用脚本来进行爆破<img src="media/c712e80c720bad7b3e1751e0a92c85b5.png"></p>
-<p><img src="media/037cbfc1ab16e57a40182b5594363e13.png"></p>
+<p>发现有布尔注入漏洞，如下图，可通过and语句和回显判断语句是否为真，所以想到使用脚本来进行爆破<img src="10141028/3.png"></p>
+<p><img src="10141028/4.png"></p>
 <p>爆破脚本：</p>
-<p><img src="media/105a7fee92c76c089ab8d5fd1c3190a1.png"></p>
+<p><img src="10141028/5.png"></p>
 <p><strong>二.逆向</strong></p>
 <p><strong>babyre</strong></p>
 <p>拖进ida，shift+f12查找字符串能直接看见flag</p>
@@ -541,16 +545,16 @@
 <p><strong>流量分析2</strong></p>
 <p>数据包使用wireshark打开，在filter中输入udp，跟踪UDP流，耐心翻看流的数据，会在中间发现一串数字，因为数据文件是16.pcapng，所以联想到16进制数据，转ascii后得到了flag</p>
 <p><strong>流量分析3</strong></p>
-<p>追踪TCP流，发现了题目剧情中的提示<img src="media/92332b446b795b9a5c367adebedecdce.png"></p>
-<p>于是搜索hnt.txt<br>在一个结果的追踪流中发现了html编码<img src="media/a1bb4042d07a9793bc5f68e3c54a5208.png"></p>
+<p>追踪TCP流，发现了题目剧情中的提示<img src="10141028/6.png"></p>
+<p>于是搜索hnt.txt<br>在一个结果的追踪流中发现了html编码<img src="10141028/7.png"></p>
 <p>解码后，获得了flag</p>
 <p><strong>流量分析4</strong></p>
 <p>过滤发起POST请求的包</p>
-<p><img src="media/8de87384751bfba7e043673ae31b35a3.png"></p>
+<p><img src="10141028/8.png"></p>
 <p>三个POST包都上传了base64加密的参数，导出分组字节流，对其进行解密，可以看出攻击者上传的木马程序</p>
-<p><img src="media/7b3bf019ddce28f493fd43a90255fa71.png"><br><img src="media/0d41c96e708908d2983268b351486ace.png"></p>
+<p><img src="10141028/9.png"><br><img src="10141028/10.png"></p>
 <p>又在追踪TCP流的时候发现返回了这样的一段数据</p>
-<p><img src="media/e1413eaa876e5faf58b9fb3d24376c7f.png"></p>
+<p>![]10141028/11.png)</p>
 <p>分析木马代码并结合这段数据，导出字节流以后删掉首尾的X@Y就应该是flag.tar.gz的数据流，于是保存这段数据后解压得到了flag.txt</p>
 <p><strong>四.crypto</strong></p>
 <p><strong>morse</strong></p>
@@ -566,7 +570,7 @@
 <p>打开后全是otoot，可以怀疑是二进制，但是根据题目提示，更可能是培根密码，所以，将o和t转为a或b，两种情况下尝试后于解密网站上解密后得出flag</p>
 <p><strong>Caesar</strong></p>
 <p>caesar是凯撒的英文，所以，先将密文字符串转化为ascii编号，然后前四个在ascii编码上分别+8<br>+9 +10 +11就对应了flag，于是可以写出解码脚本：</p>
-<p><img src="media/51d5e36f9cc66f9fadaf1f1685deb06b.png"></p>
+<p><img src="10141028/12.png"></p>
 
                 
             </div>
@@ -630,7 +634,11 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/ctf/">
+                                    <span class="chip bg-color">ctf</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -831,6 +839,14 @@
                     </div>
                 </div>
 
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/ctf/">
+                        <span class="chip bg-color">ctf</span>
+                    </a>
+                    
+                </div>
                 
             </div>
         </div>
