@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="汇编代码实现一个参数和局部变量相加的函数, dokidoki">
+    <meta name="keywords" content="HPU-CTF wp（更新了）, dokidoki">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -17,7 +17,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>汇编代码实现一个参数和局部变量相加的函数 | dokidoki</title>
+    <title>HPU-CTF wp（更新了） | dokidoki</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -311,12 +311,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/6.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/18.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">汇编代码实现一个参数和局部变量相加的函数</h1>
+                    <h1 class="description center-align post-title">HPU-CTF wp（更新了）</h1>
                 </div>
             </div>
         </div>
@@ -430,17 +430,9 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                    <div class="article-tag">
-                        
-                            <a href="/tags/%E9%80%86%E5%90%91/">
-                                <span class="chip bg-color">逆向</span>
-                            </a>
-                        
-                            <a href="/tags/%E6%B1%87%E7%BC%96/">
-                                <span class="chip bg-color">汇编</span>
-                            </a>
-                        
-                    </div>
+                          <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                          </div>
                     
                 </div>
                 <div class="col s5 right-align">
@@ -452,21 +444,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-09-20
+                    2021-10-14
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-09-21
+                    2021-10-14
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    354
+                    1.2k
                 </div>
                 
 
@@ -483,44 +475,98 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="1-源码"><a href="#1-源码" class="headerlink" title="1.源码"></a>1.源码</h2><p>以下是源码，参数定义为三个整型，然后，局部变量三个分别为2，3，4，作用为计算六个数字的和。c语言肯定很好写，汇编就要考虑更多的栈的问题了。</p>
-<pre><code>    int __declspec(naked) addwith(int x, int y, int z)
-&#123;
-    __asm 
-    &#123;
-        push ebp //保存原栈底
-        mov ebp,esp
-        sub esp, 0x40  //提升堆栈
-        push ebx
-        push esi
-        push edi  //保存原始寄存器的值
-        mov eax, 0xcccccccc
-        mov ecx, 0x10  
-        lea edi, dword ptr ss : [ebp - 0x40]
-        rep stosd   //装填缓存区
-        mov dword ptr ss : [ebp - 0x4] , 2
-        mov dword ptr ss : [ebp - 0x8] , 3
-        mov dword ptr ss : [ebp - 0xc] , 4  //写入局部变量
-        mov eax, dword ptr ss : [ebp - 0x4]
-        add eax, dword ptr ss : [ebp - 0x8]
-        add eax, dword ptr ss : [ebp - 0xc]
-        add eax, dword ptr ss : [ebp + 0x8]
-        add eax, dword ptr ss : [ebp + 0xc] 
-        add eax, dword ptr ss : [ebp + 0x10] //函数计算
-        pop edi
-        pop esi
-        pop ebx //还原寄存器
-        mov esp, ebp
-        pop ebp //还原堆栈
-        ret
-    &#125;
-&#125;
-</code></pre>
-<h2 id="2-注意的点"><a href="#2-注意的点" class="headerlink" title="2.注意的点"></a>2.注意的点</h2><ul>
-<li>__declspec(naked)表示告诉编译器不需要添加其它的汇编代码，所以，如果你在这个函数中什么都不写，编译器甚至不会为你生成ret返回指令</li>
-<li>时刻注意16进制前要加0x，否则很可能在填充缓冲区时造成错误覆盖返回地址</li>
-<li>参数在调用函数前就已经被压入栈中了，所以在写函数的时候不要再push参数<h2 id="最后，中秋要到了"><a href="#最后，中秋要到了" class="headerlink" title="最后，中秋要到了=.="></a><font color="#66ccff">最后，中秋要到了=.=</font></h2><img src="./081832219/10.jpg" alt="大家中秋节快乐嘤嘤嘤"></li>
-</ul>
+                <p><strong>HPUCTF  wp</strong></p>
+<p><strong>一.web</strong></p>
+<p><strong>故障艺术</strong></p>
+<p>进入靶机，查看网页源码，从注释中获取flag</p>
+<p><strong>GET</strong></p>
+<p>进入靶机环境，通过提示，用get方式对HPU赋值air-conditioning,传参后跳转页面获得flag</p>
+<p><strong>本地查看</strong></p>
+<p>使用burpsuit，拦截请求get请求，在请求头中添加参数X-Forwarded-For：127.0.0.1，表示来自本地访问</p>
+<p><strong>POST</strong></p>
+<p>使用hackbar，用post方式传参，password=123456（很容易猜中）</p>
+<p><strong>到底是不是数字？</strong></p>
+<p>分析php代码，意为num必须为数字但不能被判断为数字类型，在数字后加上字母来进行绕过。</p>
+<p><strong>filter</strong></p>
+<p>为p赋值为flag，被过滤不能直接访问，故使用php://filter协议实行绕过操作</p>
+<p><strong>ctf大卖场</strong></p>
+<p>登录界面使用万能密码进行绕过，然后点击购买，用burpsuite拦截请求，有cost和goods两个参数，当goods<br>== 1时，无论cost为多少，都会显示金钱不足，于是设置goods =<br>2或者3，再将cost改为负数，一直发送请求赚钱，赚两次购买flag</p>
+<p><strong>easysql</strong></p>
+<p>1,判断回显位置，先把id=1改为-1防止回显位置被占住，然后用union<br>select1,2,3…去寻找回显位置</p>
+<ol>
+<li>爆库名 select1,2,group_concat(schema_name) from<br> information_schema.schemata–+</li>
+</ol>
+<p><img src="media/2176627e47cf156d839c94790d92e750.png"></p>
+<p>3.查找note库中有哪些表：select 1,2,group_concat(table_name) from<br>information_schema.tables where table_schema=’note’ –+</p>
+<p><img src="media/426304fde32bf105a1d7ded33efe9c65.png"></p>
+<p>4.同样，段名： select concat(column_name) from information_schema.columns where<br>table_name=’fl4g’–+</p>
+<p>5.然后 union select fllllag from fl4g–+</p>
+<p><strong>babysql</strong></p>
+<p>进入环境，先登录，访问login.php。</p>
+<p>进入burpsuite抓包</p>
+<p>发现有布尔注入漏洞，如下图，可通过and语句和回显判断语句是否为真，所以想到使用脚本来进行爆破<img src="media/c712e80c720bad7b3e1751e0a92c85b5.png"></p>
+<p><img src="media/037cbfc1ab16e57a40182b5594363e13.png"></p>
+<p>爆破脚本：</p>
+<p><img src="media/105a7fee92c76c089ab8d5fd1c3190a1.png"></p>
+<p><strong>二.逆向</strong></p>
+<p><strong>babyre</strong></p>
+<p>拖进ida，shift+f12查找字符串能直接看见flag</p>
+<p><strong>三.MISC</strong></p>
+<p><strong>签到题：进群</strong></p>
+<p><strong>png隐写</strong></p>
+<p>思路：进010调高度</p>
+<p><strong>河南理工大学校徽</strong></p>
+<p>binwalk扫描，改后缀为zip，然后解压。</p>
+<p>二维码拖进ps或者sai2，找到违和感很强的那条错位线，使其右半部分框选住顺时针旋转180</p>
+<p>扫描出的结果用base16解码，打开压缩包后，ppt文件用爆破工具进行爆破，再找到ppt最后一页，ctrl+a全选改文字颜色为醒目色。</p>
+<p><strong>I wanna be the guy</strong></p>
+<p>应该可以弄进od里然后跳关，但我是直接闯过去的</p>
+<p><strong>音频隐写</strong></p>
+<p>拖进Audacity里看频谱图</p>
+<p><strong>最美奋斗者</strong></p>
+<ol>
+<li><p> 用binwalk扫描发现有zip文件，可以用工具分离，也可以用010editor把png的部分删掉，就可以进行爆破了（位数确实没想到）</p>
+</li>
+<li><p> 解一次伪加密</p>
+</li>
+<li><p> 继续根据提示爆破</p>
+</li>
+<li><p> 可以进行明文攻击</p>
+</li>
+<li><p>png更改高度，尽量改动大点，能看见右下角有二维码。扫码后得出flag</p>
+<p> <strong>流量分析1</strong></p>
+</li>
+</ol>
+<p>数据包使用wireshark打开，ctrl+f查找字符串，查找flag即可</p>
+<p><strong>流量分析2</strong></p>
+<p>数据包使用wireshark打开，在filter中输入udp，跟踪UDP流，耐心翻看流的数据，会在中间发现一串数字，因为数据文件是16.pcapng，所以联想到16进制数据，转ascii后得到了flag</p>
+<p><strong>流量分析3</strong></p>
+<p>追踪TCP流，发现了题目剧情中的提示<img src="media/92332b446b795b9a5c367adebedecdce.png"></p>
+<p>于是搜索hnt.txt<br>在一个结果的追踪流中发现了html编码<img src="media/a1bb4042d07a9793bc5f68e3c54a5208.png"></p>
+<p>解码后，获得了flag</p>
+<p><strong>流量分析4</strong></p>
+<p>过滤发起POST请求的包</p>
+<p><img src="media/8de87384751bfba7e043673ae31b35a3.png"></p>
+<p>三个POST包都上传了base64加密的参数，导出分组字节流，对其进行解密，可以看出攻击者上传的木马程序</p>
+<p><img src="media/7b3bf019ddce28f493fd43a90255fa71.png"><br><img src="media/0d41c96e708908d2983268b351486ace.png"></p>
+<p>又在追踪TCP流的时候发现返回了这样的一段数据</p>
+<p><img src="media/e1413eaa876e5faf58b9fb3d24376c7f.png"></p>
+<p>分析木马代码并结合这段数据，导出字节流以后删掉首尾的X@Y就应该是flag.tar.gz的数据流，于是保存这段数据后解压得到了flag.txt</p>
+<p><strong>四.crypto</strong></p>
+<p><strong>morse</strong></p>
+<p>莫斯密码，可以用工具直接解出来</p>
+<p><strong>莫斯密码？</strong></p>
+<p>敲击码，对照可得出flag</p>
+<p>KeyBoard</p>
+<p>键盘密码，可以看出，每组是围成了一个圈的（在键盘上可看出来），密文就是圈内的内容。解出来就是flag</p>
+<p>babyRSA</p>
+<p>用工具，我使用的是RsaCtfTool脚本，enc后面的内容作为—uncipher内容输入</p>
+<p>解出后获得flag</p>
+<p><strong>没有羊排</strong></p>
+<p>打开后全是otoot，可以怀疑是二进制，但是根据题目提示，更可能是培根密码，所以，将o和t转为a或b，两种情况下尝试后于解密网站上解密后得出flag</p>
+<p><strong>Caesar</strong></p>
+<p>caesar是凯撒的英文，所以，先将密文字符串转化为ascii编号，然后前四个在ascii编码上分别+8<br>+9 +10 +11就对应了flag，于是可以写出解码脚本：</p>
+<p><img src="media/51d5e36f9cc66f9fadaf1f1685deb06b.png"></p>
 
                 
             </div>
@@ -547,7 +593,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://darkdokido.github.io/2021/092027713.html">https://darkdokido.github.io/2021/092027713.html</a>
+                    <a href="https://darkdokido.github.io/2021/10141028.html">https://darkdokido.github.io/2021/10141028.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -584,15 +630,7 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            
-                                <a href="/tags/%E9%80%86%E5%90%91/">
-                                    <span class="chip bg-color">逆向</span>
-                                </a>
-                            
-                                <a href="/tags/%E6%B1%87%E7%BC%96/">
-                                    <span class="chip bg-color">汇编</span>
-                                </a>
-                            
+                            <span class="chip bg-color">无标签</span>
                         </div>
                     
                 </div>
@@ -760,62 +798,18 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2021/101012765.html">
+                <a href="/2021/10141028.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="HPUCTF部分思路">
+                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="HPU-CTF wp（更新了）">
                         
-                        <span class="card-title">HPUCTF部分思路</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-10-10
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-user fa-fw"></i>
-                            Darkdokido
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/CTF/">
-                        <span class="chip bg-color">CTF</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2021/091325828.html">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="c语言helloworld程序逆向时画的部分堆栈图（练习）">
-                        
-                        <span class="card-title">c语言helloworld程序逆向时画的部分堆栈图（练习）</span>
+                        <span class="card-title">HPU-CTF wp（更新了）</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -826,7 +820,45 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-09-13
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-10-14
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            Darkdokido
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2021/101354809.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="自己认为很好的博客收集贴（持续更新）">
+                        
+                        <span class="card-title">自己认为很好的博客收集贴（持续更新）</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-10-13
                             </span>
                         <span class="publish-author">
                             
@@ -839,8 +871,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E9%80%86%E5%90%91/">
-                        <span class="chip bg-color">逆向</span>
+                    <a href="/tags/ctf/">
+                        <span class="chip bg-color">ctf</span>
                     </a>
                     
                 </div>
