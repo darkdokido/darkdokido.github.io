@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="归档, dokidoki">
+    <meta name="keywords" content="dokidoki">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -17,7 +17,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>归档 | dokidoki</title>
+    <title>dokidoki</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -307,6 +307,7 @@
 
 </header>
 
+    
     <div class="bg-cover pd-header about-cover">
     <div class="container">
     <div class="row">
@@ -349,31 +350,93 @@
     </div>
 </div>
 
+
 <main class="content">
-  <div class="container friends-container">
-      <div class="card">
-          <div class="card-content">
-              <!-- artitalk -->
-              <script src="https://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
-              <script>
-                var img = "https://cdn.jsdelivr.net/gh/cungudafa/cdn/img/custom/cungudafa.jpg"; //说说旁边显示的头像
-                var appID = "idwcvJhMqGDzkqqUz6h9dXgC-MdYXbMMI";
-                var appKEY = "1cOP8YvMXt0pRKSXD20WhmF8";
-                var per = "7"; //每页显示说说的数量
-                var username = "cungudafa"; //Leancloud中设置的用户名
-                var placeholder1="只有cungudafa才能评论哦";
-                var placeholder2="没有密码，不能评论！";
-                var lazy = 1;
-                var bgimg = "https://gitee.com/cungudafa/source/raw/master/img/gif/Sitich/Sitich16.gif";
-              </script>
-              <div id="lazy"></div>
-              <div id="artitalk"></div>
-              <script type="text/javascript" src="https://unpkg.com/artitalk"></script>
-              <!-- artitalk.end -->
-          </div>
-      </div>
-  </div>
+
+    
+
+    
+
+    <!-- 所有文章卡片 -->
+    <article id="articles" class="container articles">
+        <div class="row article-row">
+            
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2021/0816md_use.html">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="如何使用md来撰写文章？">
+                            
+                            <span class="card-title">如何使用md来撰写文章？</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                -一、标题写法：-第一种方法：1、在文本下面加上 等于号 = ，那么上方的文本就变成了大标题。等于号的个数无限制，但一定要大于0个哦。。2、在文本下面加上 下划线 - ，那么上方的文本就变成了中标题，同样的 下划线个数无限制。3、要想输入=
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-08-16
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-user fa-fw"></i>
+                                Darkdokido
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/etc/">
+                            <span class="chip bg-color">etc</span>
+                        </a>
+                        
+                        <a href="/tags/markdown/">
+                            <span class="chip bg-color">markdown</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+        </div>
+    </article>
+
 </main>
+
+
+<div class="container paging">
+    <div class="row">
+        <div class="col s6 m4 l4">
+            
+            <a href="/"
+               class="left btn-floating btn-large waves-effect waves-light bg-color">
+                <i class="fas fa-angle-left"></i>
+            </a>
+            
+        </div>
+        <div class="page-info col m4 l4 hide-on-small-only">
+            <div class="center-align b-text-gray">2 / 2</div>
+        </div>
+        <div class="col s6 m4 l4">
+            
+            <a class="right btn-floating btn-large disabled">
+                <i class="fas fa-angle-right"></i>
+            </a>
+            
+        </div>
+    </div>
+</div>
+
 
 
 
