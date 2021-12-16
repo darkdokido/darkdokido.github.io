@@ -144,14 +144,14 @@
 
   
   <url>
-    <loc>https://darkdokido.github.io/tags/CTF/</loc>
+    <loc>https://darkdokido.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/</loc>
     <lastmod>2021-12-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://darkdokido.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/</loc>
+    <loc>https://darkdokido.github.io/tags/CTF/</loc>
     <lastmod>2021-12-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -172,7 +172,7 @@
   </url>
   
   <url>
-    <loc>https://darkdokido.github.io/tags/%E6%B1%87%E7%BC%96/</loc>
+    <loc>https://darkdokido.github.io/tags/etc/</loc>
     <lastmod>2021-12-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -186,14 +186,14 @@
   </url>
   
   <url>
-    <loc>https://darkdokido.github.io/tags/etc/</loc>
+    <loc>https://darkdokido.github.io/tags/linux/</loc>
     <lastmod>2021-12-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://darkdokido.github.io/tags/linux/</loc>
+    <loc>https://darkdokido.github.io/tags/%E6%B1%87%E7%BC%96/</loc>
     <lastmod>2021-12-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
