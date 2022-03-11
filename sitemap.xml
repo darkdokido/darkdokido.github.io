@@ -172,6 +172,13 @@
   </url>
   
   <url>
+    <loc>https://darkdokido.github.io/tags/etc/</loc>
+    <lastmod>2022-03-11</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://darkdokido.github.io/tags/%E9%80%86%E5%90%91/</loc>
     <lastmod>2022-03-11</lastmod>
     <changefreq>daily</changefreq>
@@ -186,20 +193,6 @@
   </url>
   
   <url>
-    <loc>https://darkdokido.github.io/tags/etc/</loc>
-    <lastmod>2022-03-11</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://darkdokido.github.io/tags/markdown/</loc>
-    <lastmod>2022-03-11</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://darkdokido.github.io/tags/linux/</loc>
     <lastmod>2022-03-11</lastmod>
     <changefreq>daily</changefreq>
@@ -208,6 +201,13 @@
   
   <url>
     <loc>https://darkdokido.github.io/tags/php/</loc>
+    <lastmod>2022-03-11</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://darkdokido.github.io/tags/markdown/</loc>
     <lastmod>2022-03-11</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
