@@ -4,6 +4,44 @@
   
     
     <entry>
+      <title>关于在PE文件中节空白区域添加窗口弹出代码</title>
+      <link href="/2022/0404400116.html"/>
+      <url>/2022/0404400116.html</url>
+      
+        <content type="html"><![CDATA[<p>#前置知识#<br>首先需要对pe文件结构有足够的了解<br>可以参照以下pe图进行实验<br><img src="https://s3.bmp.ovh/imgs/2022/04/04/65cc13f06a92f45e.png"><br>#关于本次实验#<br>实验pe文件：cryptocal.exe（一款老式的密码学综合工具）<br>实验目的：在该pe文件中的.text节空白区中添加MessageBoxA函数。并使该exe文件可正常运行。</p><p>#实验的详细过程#<br>首先，确定MessageBoxA函数的地址，在这里，我们使用Ollydbg进行确定。使用bp MessageBoxA指令来给该函数下断点，然查看地址为<strong>0x75de0f40</strong>。<br><img src="https://s3.bmp.ovh/imgs/2022/04/04/27f14681c08a343d.png"><br>我们知道，E8代表call，E9代表jmp，6A代表push。那么，MessageBoxA（0，0，0，0）可以写成：</p><blockquote><p>6A 00 6A 00 6A 00<br>E8 ptr1(word<em>4)<br>E9 ptr2(word</em>4)</p></blockquote><p>这里的两个地址还不是很确定，我们可以待会计算。<br>其次查看节中的空白位置是否足以容纳下我们的代码，<br><img src="https://i.bmp.ovh/imgs/2022/04/04/f28a8b4be4bbe0ba.png"></p><p>这里可以看出,<strong>virtualsize - rawsize</strong> 还剩下几十字节，在这一节里可以容纳下我们的代码。<br>记录下我们的原始ope：<strong>0x00055891</strong><br>然后考虑fileimage 和 bufferimage的代码对齐：<br><strong>virtualaddress - pointertodata = 0xC00</strong> 相当于本程序每个节表于内存中被拉长了c00字节</p><p>得出 ptr1 = <strong>0x75de0f40</strong> - （当前地址1 +5）<br><br>ptr2 = （<strong>0x00055891</strong> + imagebase）- （当前地址2 +5）<br>ptr2不用加0xc00，因为在内存中，程序入口就是 ope+imagebase，不加其它东西<br>最后，我们需要将原本的ope改为我们当前的编码地址，newope = 0x563f0 + 0xc00<br><img src="https://i.bmp.ovh/imgs/2022/04/04/8f182d62c03edefd.png"><br>最后保存，运行，成功弹出额外的窗口，并成功运行原程序。</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 逆向 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>驰张筛展示</title>
+      <link href="/2022/0314314.html"/>
+      <url>/2022/0314314.html</url>
+      
+        <content type="html"><![CDATA[<p>-<br><img src="https://s3.bmp.ovh/imgs/2022/03/526df78bd0a81a56.png"><br><img src="https://s3.bmp.ovh/imgs/2022/03/f7aa1a665c54adbc.png"></p><div id="disqus_thread"></div><script>    /**    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */    /*    var disqus_config = function () {    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable    };    */    (function() { // DON'T EDIT BELOW THIS LINE    var d = document, s = d.createElement('script');    s.src = 'https://dokidokid.disqus.com/embed.js';    s.setAttribute('data-timestamp', +new Date());    (d.head || d.body).appendChild(s);    })();</script><noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 驰张筛 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>php反序列化的字符串逃逸</title>
       <link href="/2021/112557508.html"/>
       <url>/2021/112557508.html</url>

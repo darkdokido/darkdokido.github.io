@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="汇编jcc指令表（转载）, HPU-筛分大师">
+    <meta name="keywords" content="关于在PE文件中节空白区域添加窗口弹出代码, HPU-筛分大师">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -17,7 +17,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>汇编jcc指令表（转载） | HPU-筛分大师</title>
+    <title>关于在PE文件中节空白区域添加窗口弹出代码 | HPU-筛分大师</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -248,12 +248,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/21.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/15.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">汇编jcc指令表（转载）</h1>
+                    <h1 class="description center-align post-title">关于在PE文件中节空白区域添加窗口弹出代码</h1>
                 </div>
             </div>
         </div>
@@ -385,21 +385,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-09-12
+                    2022-04-04
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-09-12
+                    2022-04-04
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    472
+                    383
                 </div>
                 
 
@@ -416,132 +416,14 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <div><table border="0" align="center">
-<tbody>
-<tr>
-<td>JCC指令</td>
-<td>中文含义</td>
-<td>英文原意</td>
-<td>检查符号位</td>
-<td>典型c应用</td>
-</tr>
-<tr>
-<td>JZ/JE</td>
-<td>若为0则跳转；若相等则跳转</td>
-<td>jump if zero;jump if equal</td>
-<td>ZF=1</td>
-<td>if (i == j);if (i == 0);</td>
-</tr>
-<tr>
-<td>JNZ/JNE</td>
-<td>若不为0则跳转；若不相等则跳转</td>
-<td>jump if not zero;jump if not equal</td>
-<td>ZF=0</td>
-<td>if (i != j);if (i != 0);</td>
-</tr>
-<tr>
-<td>JS</td>
-<td>若为负则跳转</td>
-<td>jump if sign</td>
-<td>SF=1</td>
-<td>if (i &lt; 0);</td>
-</tr>
-<tr>
-<td>JNS</td>
-<td>若为正则跳转</td>
-<td>jump if not sign</td>
-<td>SF=0</td>
-<td>if (i &gt; 0);</td>
-</tr>
-<tr>
-<td>JP/JPE</td>
-<td>若1出现次数为偶数则跳转</td>
-<td>jump if Parity (Even)</td>
-<td>PF=1</td>
-<td>(null)</td>
-</tr>
-<tr>
-<td>JNP/JPO</td>
-<td>若1出现次数为奇数则跳转</td>
-<td>jump if not parity (odd)</td>
-<td>PF=0</td>
-<td>(null)</td>
-</tr>
-<tr>
-<td>JO</td>
-<td>若溢出则跳转</td>
-<td>jump if overflow</td>
-<td>OF=1</td>
-<td>(null)</td>
-</tr>
-<tr>
-<td>JNO</td>
-<td>若无溢出则跳转</td>
-<td>jump if not overflow</td>
-<td>OF=0</td>
-<td>(null)</td>
-</tr>
-<tr>
-<td>JC/JB/JNAE</td>
-<td>若进位则跳转；若低于则跳转；若不高于等于则跳转</td>
-<td>jump if carry;jump if below;jump if not above equal</td>
-<td>CF=1</td>
-<td>if (i &lt; j);</td>
-</tr>
-<tr>
-<td>JNC/JNB/JAE</td>
-<td>若无进位则跳转；若不低于则跳转；若高于等于则跳转</td>
-<td>jump if not carry;jump if not below;jump if above equal</td>
-<td>CF=0</td>
-<td>if (i &gt;= j);</td>
-</tr>
-<tr>
-<td>JBE/JNA</td>
-<td>若低于等于则跳转；若不高于则跳转</td>
-<td>jump if below equal;jump if not above</td>
-<td>ZF=1或CF=1</td>
-<td>if (i &lt;= j);</td>
-</tr>
-<tr>
-<td>JNBE/JA</td>
-<td>若不低于等于则跳转；若高于则跳转</td>
-<td>jump if not below equal;jump if above</td>
-<td>ZF=0或CF=0</td>
-<td>if (i &gt; j);</td>
-</tr>
-<tr>
-<td>JL/JNGE</td>
-<td>若小于则跳转；若不大于等于则跳转</td>
-<td>jump if less;jump if not greater equal</td>
-<td>SF != OF</td>
-<td>if (si &lt; sj);</td>
-</tr>
-<tr>
-<td>JNL/JGE</td>
-<td>若不小于则跳转；若大于等于则跳转</td>
-<td>jump if not less;jump if greater equal</td>
-<td>SF=OF</td>
-<td>if (si &gt;= sj);</td>
-</tr>
-<tr>
-<td>JLE/JNG</td>
-<td>若小于等于则跳转；若不大于则跳转</td>
-<td>jump if less equal;jump if not greater</td>
-<td>ZF != OF 或 ZF=1</td>
-<td>if (si &lt;= sj);</td>
-</tr>
-<tr>
-<td>JNLE/JG</td>
-<td>若不小于等于则跳转；若大于则跳转</td>
-<td>jump if not less equal;jump if greater</td>
-<td>SF=OF 且 ZF=0</td>
-<td>if(si&gt;sj)</td>
-</tr>
-</tbody>
-</table></div>
-
-
-<p>转自<a target="_blank" rel="noopener" href="https://www.cnblogs.com/Drunkmars/p/14533653.html">Drunkmars,点击前往</a></p>
+                <p>#前置知识#<br>首先需要对pe文件结构有足够的了解<br>可以参照以下pe图进行实验<br><img src="https://s3.bmp.ovh/imgs/2022/04/04/65cc13f06a92f45e.png"><br>#关于本次实验#<br>实验pe文件：cryptocal.exe（一款老式的密码学综合工具）<br>实验目的：在该pe文件中的.text节空白区中添加MessageBoxA函数。并使该exe文件可正常运行。</p>
+<p>#实验的详细过程#<br>首先，确定MessageBoxA函数的地址，在这里，我们使用Ollydbg进行确定。使用bp MessageBoxA指令来给该函数下断点，然查看地址为<strong>0x75de0f40</strong>。<br><img src="https://s3.bmp.ovh/imgs/2022/04/04/27f14681c08a343d.png"><br>我们知道，E8代表call，E9代表jmp，6A代表push。那么，MessageBoxA（0，0，0，0）可以写成：</p>
+<blockquote>
+<p>6A 00 6A 00 6A 00<br>E8 ptr1(word<em>4)<br>E9 ptr2(word</em>4)</p>
+</blockquote>
+<p>这里的两个地址还不是很确定，我们可以待会计算。<br>其次查看节中的空白位置是否足以容纳下我们的代码，<br><img src="https://i.bmp.ovh/imgs/2022/04/04/f28a8b4be4bbe0ba.png"></p>
+<p>这里可以看出,<strong>virtualsize - rawsize</strong> 还剩下几十字节，在这一节里可以容纳下我们的代码。<br>记录下我们的原始ope：<strong>0x00055891</strong><br>然后考虑fileimage 和 bufferimage的代码对齐：<br><strong>virtualaddress - pointertodata = 0xC00</strong> 相当于本程序每个节表于内存中被拉长了c00字节</p>
+<p>得出 ptr1 = <strong>0x75de0f40</strong> - （当前地址1 +5）<br><br>ptr2 = （<strong>0x00055891</strong> + imagebase）- （当前地址2 +5）<br>ptr2不用加0xc00，因为在内存中，程序入口就是 ope+imagebase，不加其它东西<br>最后，我们需要将原本的ope改为我们当前的编码地址，newope = 0x563f0 + 0xc00<br><img src="https://i.bmp.ovh/imgs/2022/04/04/8f182d62c03edefd.png"><br>最后保存，运行，成功弹出额外的窗口，并成功运行原程序。</p>
 
                 
             </div>
@@ -568,7 +450,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://darkdokido.github.io/2021/091241037.html">https://darkdokido.github.io/2021/091241037.html</a>
+                    <a href="https://darkdokido.github.io/2022/0404400116.html">https://darkdokido.github.io/2022/0404400116.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -777,17 +659,18 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2021/091325828.html">
+                <a href="/2022/0404400116.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="c语言helloworld程序逆向时画的部分堆栈图（练习）">
+                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="关于在PE文件中节空白区域添加窗口弹出代码">
                         
-                        <span class="card-title">c语言helloworld程序逆向时画的部分堆栈图（练习）</span>
+                        <span class="card-title">关于在PE文件中节空白区域添加窗口弹出代码</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -797,9 +680,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-09-13
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-04-04
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -808,6 +691,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -826,13 +710,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/08201.html">
+                <a href="/2022/0314314.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/26.jpg" class="responsive-img" alt="提问的艺术.md（转载）">
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="驰张筛展示">
                         
-                        <span class="card-title">提问的艺术.md（转载）</span>
+                        <span class="card-title">驰张筛展示</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -843,7 +727,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-08-20
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-03-14
                             </span>
                         <span class="publish-author">
                             
@@ -856,8 +740,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/etc/">
-                        <span class="chip bg-color">etc</span>
+                    <a href="/tags/%E9%A9%B0%E5%BC%A0%E7%AD%9B/">
+                        <span class="chip bg-color">驰张筛</span>
                     </a>
                     
                 </div>
